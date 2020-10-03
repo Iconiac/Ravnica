@@ -1,14 +1,642 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-
-  <title>Ravniac Test</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+    <meta charset="utf=8">  
+    <title>Gilden von Ravnica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--JQuery Mobile-->
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>-->
+    
+    <!--JQuery-->
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+     
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="script.js"></script>
+    <style type="text/css"></style>
 </head>
 
 <body>
- 
+    
+    <header>
+        <div id="startScreen">
+            <div id="headline">
+                <h1>RAVNICA</h1>
+                <h2>Die Stadt der Gilden</h2>
+            </div>
+        
+            <div id="description">
+                <p>Bewerte die folgenden Aussagen von 1 bis 5, wobei 1 bedeutet, dass du am wenigsten dieser Aussage zustimmen würdest und 5, dass du am stärksten zustimmen würdest. Trage deine Antworten in die entsprechenden Felder ein. Wenn du fertig bist, zähle die Zahlenreihen zusammen. Die höchste Punktzahl entspricht der Gilde, mit der du am meisten gemeinsam hast.</p>
+            </div>
+        </div>
+    </header>
+    
+    <section id="gildenOverview">
+                
+        <!--Punkteauswertung Test-->
+        <div id="GildenListeIcons" class="grid-container">
+            <div class="iconsGridStyle" onclick="showDescription('textAzorius', 'descriptionTextDIV', 'azorius')" id="azorius"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textDimir', 'descriptionTextDIV', 'dimir')" id="dimir"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textBoros', 'descriptionTextDIV', 'boros')" id="boros" style="opacity: 1.0"></div> <!--Enabled ist der Boros Text als Standardwert-->
+            <div class="iconsGridStyle" onclick="showDescription('textGolgari', 'descriptionTextDIV', 'golgari')" id="golgari"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textSimic', 'descriptionTextDIV', 'simic')" id="simic"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textSelesnya', 'descriptionTextDIV', 'selesnya')" id="selesnya"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textRakdos', 'descriptionTextDIV', 'rakdos')" id="rakdos"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textOrzhov', 'descriptionTextDIV', 'orzhov')" id="orzhov"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textIzzet', 'descriptionTextDIV', 'izzet')" id="izzet"></div>
+            <div class="iconsGridStyle" onclick="showDescription('textGruul', 'descriptionTextDIV', 'gruul')" id="gruul"></div>
+        </div>
+        
+        
+                
+        <!--Einleitungstext für die jeweilige Gilde-->
+        <div>
+            <div id="descriptionTextDIV" style="display: block">
+                <div class="descriptionTextP" style="display: none" id="textAzorius">
+                    <h3>Der Azorius Senat</h3>
+                    <p>Prahv, der antike Azourische Sitz des Rechts, ist der kälteste Ort in Ravnica. Im Innern einer stillen Kammer, hoch über den Dächern der Stadt, sitzt der ehrenwerte Augustin IV, der derzeitige Oberste Schiedsmann der Azorius. Wie schon bei vielen Schiedsmännern vor ihm, ist der Name Augustin IV eine Zierde, ausgesucht aus dem Namen gefeierter Schiedsmänner der Geschichte. Für seine hierarchische und bürokratische Gilde sind Geschichte, Stabilität und das Gesetz von eminenter Wichtigkeit. Selbst ein Feldmarschall der Azorius erlässt genau so oft Gesetze gegen seine Gegner wie er sie auf dem Schlachtfeld bekämpft. Warum soll man seine schimmernde Perlmutrüstung beschädigen? Viele Bürger von Ravnica haben vergessen, dass die Azorius die offizielle Regierung sind. Wer würde ihnen schon die Schuld daran geben, dass ihre Gilde nur dafür da zu sein scheint, dass nichts passiert.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textDimir">
+                    <h3>Das Haus Dimir</h3>
+                    <p>Das Haus Dimir, die Unsichtbaren, die zehnte Gilde – eine Erfindung, eine Horrorgeschichte, die man kleinen Kindern erzählt. Der Legende nach soll der Vampir Szadek der Gründungszeremonie des Gildenbundes als geheimer zehnter Unterzeichner beigewohnt haben, dessen Präsenz und Existenz vor den anderen verborgen wurde. Im Laufe der Jahrtausende wurden die Geistergeschichten, die sich um Dimir rankten, immer umfangreicher. Sie erzählten von uralten, untoten Nekromanten-Ratgebern, gespenstischen Auftragsmördern und raffinierten, schwarzen Schrecken, die durch das unendliche Labyrinth der Abwasserkanäle unterhalb der Stadt gleiten. Wenn man auf die etwas misstrauischen und paranoiden Bewohner von Ravnica hört, dann kann man glauben, dass die Agenten des Hauses Dimir überall sind, als Augen und Ohren von Szadek.</p>
+                </div>
+                <div class="descriptionTextP" style="display: block" id="textBoros"> <!--Opacity vom Boros Icon ist ebenfalls auf 1.0 als Standardwert-->
+                    <h3>Die Boros Legion</h3>
+                    <p>Die Boros-Legion glaubt an ein höheres Gesetz, eines in dem die Rechtschaffenheit das Feuer ist. Und die Gerechtigkeit das Licht, das aus ihm scheint. Geführt vom Engel Razia, ist die Boros-Legion eine äußerst gewaltigtätige militärische Kraft. Sich einem Zweikampf mit der Legion zu stellen, käme einem Selbstmord gleich; sie sind die best ausgebildeten und furchtlosesten Kämpfer auf dem Planeten. Bei den Boros geht es um die Tat - Analyse und Zweifel überlassen sie anderen. Vielleicht wurde gerade deshalb ein Teil der Gilde , die Liga des Wojek, dazu auserwählt, die Gesetze in Ravnica durchzusetzen. Ihr strikter Glaube an die Gerechtigkeit macht sie so schnell und effektiv im beheben von Konflikten.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textGolgari">
+                    <h3>Die Golgari</h3>
+                    <p>Die Golgari glauben, dass man nicht wahrlich leben kann, ehe man nicht gestorben ist. Für sie gibt der Tod dem Leben einen Sinn und aus dem Tod entsteht neues Leben. Mit ihrere riesigen Horde von Untoten, die sowohl als stehendes Heer auch als Hilfsarbeiter dienen, agieren die Golgari in Ravnicas Untergrund, wobei sie langsam verlassene und herrenlose Gebiete übernehmen, wie ein übelriechender schleimiger Schimmel. Die Gilde unterteilt sich in viele Fraktionen, von den untoten Scheußlichkeiten aus pflanzlicher Materie und Fleisch bis hin zu den Dunkelelfen Ravnicas, auch bekannt als die Devkarin. Um die Vorherrschaft in der Gilde wurde seit jeher gerungen. Die Schwestern des steinernen Todes, ein Trio aus Gorgonen, sind nun seit über einem Jahrtausend die Anführer der Gilde, aber auch Savra, eine Schamanin der Dunkelelfen hat ein Auge auf den Thron der Golgari geworfen. Und üblicherweise bekommt Savra was sie will.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textSimic">
+                    <h3>Das Simic Kombinat</h3>
+                    <p>Was wird aus den Ordnern der Wildnis auf einer Welt, auf der die Wildnis vollständig gezähmt ist? Versetze dich mal in die seltsame Lage des Simic Kombinates, einer Gruppe von Elfen und Gelehrten, die sich um die Erhaltung der Natur in Ravnica kümmern. Just in dem Moment als die Natur in die Stadt eingebunden war, waren auch die Vorstellungen der Simic erfüllt, wie die Natur sein sollte. In merkwürdiger Art und Weise begannen die Simic die Natur so zu verändern, dass sie in einer Welt überleben kann, die immer mehr durch gemeißelte Steine bedeckt wird. Sie begannen damit die Biologie zu „verbessern“ und die Evolution voranzutreiben. Der neueste Durchbruch gelang durch den Simic Weisen Momir Vig, einem analytischen Genie, dessen Verstand aus einer formellen Institution heraus arbeitet. Vig bahnte den Weg des Zytoplasmas, einer formbaren Biomasse, die andere Lebewesen verbessern kann.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textSelesnya">
+                    <h3>Die Selesnya Konklave</h3>
+                    <p>"Wenn du dich uns angeschlossen hast, dann bist du uns gleichgestellt. Vorher bist du verloren." So sprach der Wolfenreiter-Evangelist Tolsimir, ein Agent der Selesnya Konklave. Aber diese Worte hätten von jedem aus der Gilde kommen können. Je nach Sichtweise ist die Konklave entweder eine selbstlose, erzieherische und spirituelle Gruppe oder eine gehirnwaschende Natur-Sekte. Diese Gilde stützt ihre Mitgliederschar durch die unaufhaltsame Neuanwerbung von Außenstehenden. Die Struktur ist fast vollständig dezentralisiert - ein großes Konzil von Lebewesen, die sich teilweise ein Bewusstsein teilen, führen die Konklave. Die heimat der Konklave ist Vitu-Ghazi, ein uralter Baum in der Mitte von Ravnicas ältestem und größten Stadtteil.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textRakdos">
+                    <h3>Der Kult von Rakdos</h3>
+                    <p>Ein Besucher von Ravnica könnte sich wundern, warum der Kult von Rakdos nicht von den anderen Gilden schon vor Jahrtausenden zerschlagen wurde. Welchen sinnvollen Nutzen könnte denn eine Clique von mordlüsternden, vergnügungssüchtigen Dämonenanbetern schon haben? Die gesetzestreuen Gilden wenden sich an die Rakdos, wenn sie ein Hindernis beseitigen oder einen Kunden bei Laune halten müssen. Die Meuchelmörder der Rakdos mögen zwar unordentlich sein, aber sie sind sehr eifrig und viele halten die Restaurants und Nachtklubs des Kultes für unnachahmbar. Und der Dämon Rakdos selbst? Glücklicherweise – für den Rest von Ravnica – verbringt er die meiste Zeit tief unten in seinem Palast Rix Maadi und vertreibt sich seine zeit mit unaussprechlichen Folterungen und anderen „Ablenkungen“.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textOrzhov">
+                    <h3>Die Orzhov</h3>
+                    <p>Um die Orzhov zu finden, so sagt man, muss man nur dem Gold folgen. Der so genannten Gilde des Handels gehören sowohl Ravnicas reichste Bürger als ich ihre Unterdrückten an. Auf der höchsten Stufe der Gildenleiter sitzen die Patriarchen, deren Reichtum und Privilegien keine Grenzen kennen. Ihre Wucherzinsen verhelfen ihnen zu einem verlängerten Leben, bei dem sie korpulenter und grauer werden. Sie kaufen ihnen die Unsterblichkeit – Geister der vergangenen Patriarchen kümmern sich um ihre „Familiena(h)ngelegenheiten“ aus dem Jenseits. Die tiefsten Tiefen der Gilde sind durch trostlose Diener besetzt. Viele sind vertraglich verpflichtet, durch erdrückende Schulen, die sie von ihren Eltern oder teilweise sogar entfernte Vorfahren geerbt haben. Ein Scharnier aus religiösem Pomp und Ritualen hält diese zerbrechliche soziale Ordnung zusammen, obwohl einige glauben, dass die Orzhov keinem anderen Gott huldigen als dem Gold.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textIzzet">
+                    <h3>Die Izzet Liga</h3>
+                    <p>Die Izzet betreiben Hitze und Kälte - und das buchstäblich. Tatsächlich betreiben sie fast alles, vom Heizungssystem für Ravnica bis hin zur Wasserversorgung. Als unbestrittene Meister der Zauberei und Erfindungen in Ravnica, sind sie die einzige Gilde die Metamagie versteht, die Art und Weise wie Magie tatsächlich funktioniert. Unter der Führung des launenhaften und unergründlichen brillanten Drachen Niv-Mizzet erstellen und zerstören die Izzet Magiemacher Dinge angetrieben durch die Begeisterung für Neuentdeckungen. Als Experte der Elementar-Magie benutzen die Izzet Elementare als Wachen für Alchemielabore und um ihre Turbinen anzutreiben. Sie haben sogar ihre eigene Mischrasse von Elementaren gezüchtet, die so genannten Seltsamkeiten. Anders als andere Gilden sehen die Izzet keinen Sinn in Macht, Herrschaft oder Reichtum. Die rasende Vermehrung von Wissen ist das einzige Ziel der Gilde.</p>
+                </div>
+                <div class="descriptionTextP" style="display: none" id="textGruul">
+                    <h3>Der Gruul Klan</h3>
+                    <p>Die Gruul nehmen sich weder die Zeit dafür, ihren Standpunkt zu erklären, noch erlernen sie die dafür notwendigen Sprachkenntnisse. Sie halten die Zivilisation für einen Hohn, einen goldenen Käfig, der die eigenen Wünsche unterdrückt und die Schwachen mächtig scheinen lässt. Die Gruul leben für das Hier und Jetzt und sie „überzeugen“ andere, es ihnen gleich zu tun. Einst eine starke Gilde sind die Gruul heute nur noch ein loser Zusammenschluss von Bettlern, Banden und Plündertruppen. Die größte dieser Banden hat auch den größten Anführer: Borborygmos, ein riesiger Zyklop, der nebenbei gerne Zwietracht verbreitet. Die Banden der Gruul überleben dadurch, dass sie ihre Nachbarschaft plündern und brandschatzen und aus den Trümmern das herausholen, was sie brauchen. Wenn ihre Vorräte zu Ende gehen, wird es Zeit für einen neuen Streifzug durch die Gemeinde.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    
+    <section id="sectionFragebogen">
+        
+        <div>
+            
+            <!--Fragebogen-->               
+            <form id="mainForm" name="gildenQuiz">
+                
+                <!--Azorius-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question01" style="display: block" class="singleQuestion">
+                    <legend>01. Menschen sind besser dran, wenn sie einen kühlen Kopf bewahren.</legend>
+                    <input type="radio" id="f01-1" name="f01" value="1"><label for="f01-1">1</label>
+                    <input type="radio" id="f01-2" name="f01" value="2"><label for="f01-2">2</label>
+                    <input type="radio" id="f01-3" name="f01" value="3"><label for="f01-3">3</label>
+                    <input type="radio" id="f01-4" name="f01" value="4"><label for="f01-4">4</label>
+                    <input type="radio" id="f01-5" name="f01" value="5"><label for="f01-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz01" class="questionButtons" onclick="nextQuestion('question01', 'question02', 'f01')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Dimir-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question02" style="display: none" class="singleQuestion">
+                    <legend>02. Manchmal sind kleine Lügen und Betrügereien notwendig, um dein Ziel zu erreichen.</legend>
+                    <input type="radio" id="f02-1" name="f02" value="1" checked="checked"><label for="f02-1">1</label>
+                    <input type="radio" id="f02-2" name="f02" value="2"><label for="f02-2">2</label>
+                    <input type="radio" id="f02-3" name="f02" value="3"><label for="f02-3">3</label>
+                    <input type="radio" id="f02-4" name="f02" value="4"><label for="f02-4">4</label>
+                    <input type="radio" id="f02-5" name="f02" value="5"><label for="f02-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz02" class="questionButtons" onclick="nextQuestion('question02', 'question03', 'f02')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Boros-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question03" style="display: none" class="singleQuestion">
+                    <legend>03. Ein Projekt zu beenden ist wichtiger als es durchzuplanen.</legend>
+                    <input type="radio" id="f03-1" name="f03" value="1" checked="checked"><label for="f03-1">1</label>
+                    <input type="radio" id="f03-2" name="f03" value="2"><label for="f03-2">2</label>
+                    <input type="radio" id="f03-3" name="f03" value="3"><label for="f03-3">3</label>
+                    <input type="radio" id="f03-4" name="f03" value="4"><label for="f03-4">4</label>
+                    <input type="radio" id="f03-5" name="f03" value="5"><label for="f03-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz03" class="questionButtons" onclick="nextQuestion('question03', 'question04', 'f03')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Golgari-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question04" style="display: none" class="singleQuestion">
+                    <legend>04. Gesunder Wettbewerb stärkt jedes System.</legend>
+                    <input type="radio" id="f04-1" name="f04" value="1" checked="checked"><label for="f04-1">1</label>
+                    <input type="radio" id="f04-2" name="f04" value="2"><label for="f04-2">2</label>
+                    <input type="radio" id="f04-3" name="f04" value="3"><label for="f04-3">3</label>
+                    <input type="radio" id="f04-4" name="f04" value="4"><label for="f04-4">4</label>
+                    <input type="radio" id="f04-5" name="f04" value="5"><label for="f04-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz04" class="questionButtons" onclick="nextQuestion('question04', 'question05', 'f04')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Simic-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question05" style="display: none" class="singleQuestion">
+                    <legend>05. Wir werden irgendwann alle Wunder der Natur klären können.</legend>
+                    <input type="radio" id="f05-1" name="f05" value="1" checked="checked"><label for="f05-1">1</label>
+                    <input type="radio" id="f05-2" name="f05" value="2"><label for="f05-2">2</label>
+                    <input type="radio" id="f05-3" name="f05" value="3"><label for="f05-3">3</label>
+                    <input type="radio" id="f05-4" name="f05" value="4"><label for="f05-4">4</label>
+                    <input type="radio" id="f05-5" name="f05" value="5"><label for="f05-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz05" class="questionButtons" onclick="nextQuestion('question05', 'question06', 'f05')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Simic-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question06" style="display: none" class="singleQuestion">
+                    <legend>06. Gute Instinkte sind das Resultat von unbewusster langer Vorausplanung.</legend>
+                    <input type="radio" id="f06-1" name="f06" value="1" checked="checked"><label for="f06-1">1</label>
+                    <input type="radio" id="f06-2" name="f06" value="2"><label for="f06-2">2</label>
+                    <input type="radio" id="f06-3" name="f06" value="3"><label for="f06-3">3</label>
+                    <input type="radio" id="f06-4" name="f06" value="4"><label for="f06-4">4</label>
+                    <input type="radio" id="f06-5" name="f06" value="5"><label for="f06-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz06" class="questionButtons" onclick="nextQuestion('question06', 'question07', 'f06')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Selesnya-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question07" style="display: none" class="singleQuestion">
+                    <legend>07. Individualität kann die Menschen daran hindern andere zu akzeptieren.</legend>
+                    <input type="radio" id="f07-1" name="f07" value="1" checked="checked"><label for="f07-1">1</label>
+                    <input type="radio" id="f07-2" name="f07" value="2"><label for="f07-2">2</label>
+                    <input type="radio" id="f07-3" name="f07" value="3"><label for="f07-3">3</label>
+                    <input type="radio" id="f07-4" name="f07" value="4"><label for="f07-4">4</label>
+                    <input type="radio" id="f07-5" name="f07" value="5"><label for="f07-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz07" class="questionButtons" onclick="nextQuestion('question07', 'question08', 'f07')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Boros-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question08" style="display: none" class="singleQuestion">
+                    <legend>08. Gerechtigkeit und Rache liegen nah beieinander.</legend>
+                    <input type="radio" id="f08-1" name="f08" value="1" checked="checked"><label for="f08-1">1</label>
+                    <input type="radio" id="f08-2" name="f08" value="2"><label for="f08-2">2</label>
+                    <input type="radio" id="f08-3" name="f08" value="3"><label for="f08-3">3</label>
+                    <input type="radio" id="f08-4" name="f08" value="4"><label for="f08-4">4</label>
+                    <input type="radio" id="f08-5" name="f08" value="5"><label for="f08-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz08" class="questionButtons" onclick="nextQuestion('question08', 'question09', 'f08')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Selesnya-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question09" style="display: none" class="singleQuestion">
+                    <legend>09. Jeder von uns hat die Verpflichtung, anderen dabei zu helfen, ihre Bedürfnisse zu sichern.</legend>
+                    <input type="radio" id="f09-1" name="f09" value="1" checked="checked"><label for="f09-1">1</label>
+                    <input type="radio" id="f09-2" name="f09" value="2"><label for="f09-2">2</label>
+                    <input type="radio" id="f09-3" name="f09" value="3"><label for="f09-3">3</label>
+                    <input type="radio" id="f09-4" name="f09" value="4"><label for="f09-4">4</label>
+                    <input type="radio" id="f09-5" name="f09" value="5"><label for="f09-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz09" class="questionButtons" onclick="nextQuestion('question09', 'question10', 'f09')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Rakdos-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question10" style="display: none" class="singleQuestion">
+                    <legend>10. Vergnügt leben ist wichtiger, als sicher zu leben.</legend>
+                    <input type="radio" id="f10-1" name="f10" value="1" checked="checked"><label for="f10-1">1</label>
+                    <input type="radio" id="f10-2" name="f10" value="2"><label for="f10-2">2</label>
+                    <input type="radio" id="f10-3" name="f10" value="3"><label for="f10-3">3</label>
+                    <input type="radio" id="f10-4" name="f10" value="4"><label for="f10-4">4</label>
+                    <input type="radio" id="f10-5" name="f10" value="5"><label for="f10-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz10" class="questionButtons" onclick="nextQuestion('question10', 'question11', 'f10')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Azorius-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question11" style="display: none" class="singleQuestion">
+                    <legend>11. Menschen verhalten sich zerstörerisch, wenn sie auf sich alleine gestellt sind.</legend>
+                    <input type="radio" id="f11-1" name="f11" value="1" checked="checked"><label for="f11-1">1</label>
+                    <input type="radio" id="f11-2" name="f11" value="2"><label for="f11-2">2</label>
+                    <input type="radio" id="f11-3" name="f11" value="3"><label for="f11-3">3</label>
+                    <input type="radio" id="f11-4" name="f11" value="4"><label for="f11-4">4</label>
+                    <input type="radio" id="f11-5" name="f11" value="5"><label for="f11-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz11" class="questionButtons" onclick="nextQuestion('question11', 'question12', 'f11')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Golgari-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question12" style="display: none" class="singleQuestion">
+                    <legend>12. Die Macht sollte bei denen liegen, die gut damit umgehen können.</legend>
+                    <input type="radio" id="f12-1" name="f12" value="1" checked="checked"><label for="f12-1">1</label>
+                    <input type="radio" id="f12-2" name="f12" value="2"><label for="f12-2">2</label>
+                    <input type="radio" id="f12-3" name="f12" value="3"><label for="f12-3">3</label>
+                    <input type="radio" id="f12-4" name="f12" value="4"><label for="f12-4">4</label>
+                    <input type="radio" id="f12-5" name="f12" value="5"><label for="f12-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz12" class="questionButtons" onclick="nextQuestion('question12', 'question13', 'f12')">Nächste Frage</button>
+                </fieldset>
+            
+                <!--Orzhov-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question13" style="display: none" class="singleQuestion">
+                    <legend>13. Reiche kommen in der Regel durch harte Arbeit und Einsatz zu ihrem Vermögen.</legend>
+                    <input type="radio" id="f13-1" name="f13" value="1" checked="checked"><label for="f13-1">1</label>
+                    <input type="radio" id="f13-2" name="f13" value="2"><label for="f13-2">2</label>
+                    <input type="radio" id="f13-3" name="f13" value="3"><label for="f13-3">3</label>
+                    <input type="radio" id="f13-4" name="f13" value="4"><label for="f13-4">4</label>
+                    <input type="radio" id="f13-5" name="f13" value="5"><label for="f13-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz13" class="questionButtons" onclick="nextQuestion('question13', 'question14', 'f13')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Selesnya-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question14" style="display: none" class="singleQuestion">
+                    <legend>14. Es ist gut, wenn eine Gruppe von Menschen die gleichen Interessen und Ziele hat.</legend>
+                    <input type="radio" id="f14-1" name="f14" value="1" checked="checked"><label for="f14-1">1</label>
+                    <input type="radio" id="f14-2" name="f14" value="2"><label for="f14-2">2</label>
+                    <input type="radio" id="f14-3" name="f14" value="3"><label for="f14-3">3</label>
+                    <input type="radio" id="f14-4" name="f14" value="4"><label for="f14-4">4</label>
+                    <input type="radio" id="f14-5" name="f14" value="5"><label for="f14-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz14" class="questionButtons" onclick="nextQuestion('question14', 'question15', 'f14')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Golgari-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question15" style="display: none" class="singleQuestion">
+                    <legend>15. Das "Überleben der Stärksten" ist ein natürliches Gesetz, das nicht nur für die Tiere gilt.</legend>
+                    <input type="radio" id="f15-1" name="f15" value="1" checked="checked"><label for="f15-1">1</label>
+                    <input type="radio" id="f15-2" name="f15" value="2"><label for="f15-2">2</label>
+                    <input type="radio" id="f15-3" name="f15" value="3"><label for="f15-3">3</label>
+                    <input type="radio" id="f15-4" name="f15" value="4"><label for="f15-4">4</label>
+                    <input type="radio" id="f15-5" name="f15" value="5"><label for="f15-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz15" class="questionButtons" onclick="nextQuestion('question15', 'question16', 'f15')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Rakdos-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question16" style="display: none" class="singleQuestion">
+                    <legend>16. Die meisten Regeln sind dazu da, um Menschen von dem abzuhalten, was sie gerne tun würden.</legend>
+                    <input type="radio" id="f16-1" name="f16" value="1" checked="checked"><label for="f16-1">1</label>
+                    <input type="radio" id="f16-2" name="f16" value="2"><label for="f16-2">2</label>
+                    <input type="radio" id="f16-3" name="f16" value="3"><label for="f16-3">3</label>
+                    <input type="radio" id="f16-4" name="f16" value="4"><label for="f16-4">4</label>
+                    <input type="radio" id="f16-5" name="f16" value="5"><label for="f16-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz16" class="questionButtons" onclick="nextQuestion('question16', 'question17', 'f16')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Izzet-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question17" style="display: none" class="singleQuestion">
+                    <legend>17. Eine Idee ist wahrscheinlich wichtig, wenn sie irgendwem sehr am Herzen liegt.</legend>
+                    <input type="radio" id="f17-1" name="f17" value="1" checked="checked"><label for="f17-1">1</label>
+                    <input type="radio" id="f17-2" name="f17" value="2"><label for="f17-2">2</label>
+                    <input type="radio" id="f17-3" name="f17" value="3"><label for="f17-3">3</label>
+                    <input type="radio" id="f17-4" name="f17" value="4"><label for="f17-4">4</label>
+                    <input type="radio" id="f17-5" name="f17" value="5"><label for="f17-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz17" class="questionButtons" onclick="nextQuestion('question17', 'question18', 'f17')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Azorius-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question18" style="display: none" class="singleQuestion">
+                    <legend>18. Gesetze sollten auch dann eingehalten werden, wenn ihr Übertreten niemandem schaden würde.</legend>
+                    <input type="radio" id="f18-1" name="f18" value="1" checked="checked"><label for="f18-1">1</label>
+                    <input type="radio" id="f18-2" name="f18" value="2"><label for="f18-2">2</label>
+                    <input type="radio" id="f18-3" name="f18" value="3"><label for="f18-3">3</label>
+                    <input type="radio" id="f18-4" name="f18" value="4"><label for="f18-4">4</label>
+                    <input type="radio" id="f18-5" name="f18" value="5"><label for="f18-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz18" class="questionButtons" onclick="nextQuestion('question18', 'question19', 'f18')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Orzhov-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question19" style="display: none" class="singleQuestion">
+                    <legend>19. Wenn alle die gleichen Vorteile haben, ist es so, als hätte keiner irgendwelche Vorteile.</legend>
+                    <input type="radio" id="f19-1" name="f19" value="1" checked="checked"><label for="f19-1">1</label>
+                    <input type="radio" id="f19-2" name="f19" value="2"><label for="f19-2">2</label>
+                    <input type="radio" id="f19-3" name="f19" value="3"><label for="f19-3">3</label>
+                    <input type="radio" id="f19-4" name="f19" value="4"><label for="f19-4">4</label>
+                    <input type="radio" id="f19-5" name="f19" value="5"><label for="f19-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz19" class="questionButtons" onclick="nextQuestion('question19', 'question20', 'f19')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Izzet-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question20" style="display: none" class="singleQuestion">
+                    <legend>20. Probleme werden eher durch spontane Einfälle, als durch durchdachte Arbeit gelöst.</legend>
+                    <input type="radio" id="f20-1" name="f20" value="1" checked="checked"><label for="f20-1">1</label>
+                    <input type="radio" id="f20-2" name="f20" value="2"><label for="f20-2">2</label>
+                    <input type="radio" id="f20-3" name="f20" value="3"><label for="f20-3">3</label>
+                    <input type="radio" id="f20-4" name="f20" value="4"><label for="f20-4">4</label>
+                    <input type="radio" id="f20-5" name="f20" value="5"><label for="f20-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz20" class="questionButtons" onclick="nextQuestion('question20', 'question21', 'f20')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Dimir-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question21" style="display: none" class="singleQuestion">
+                    <legend>21. In einem Streit ist es besser, anfänglich sein Wissen für sich zu behalten.</legend>
+                    <input type="radio" id="f21-1" name="f21" value="1" checked="checked"><label for="f21-1">1</label>
+                    <input type="radio" id="f21-2" name="f21" value="2"><label for="f21-2">2</label>
+                    <input type="radio" id="f21-3" name="f21" value="3"><label for="f21-3">3</label>
+                    <input type="radio" id="f21-4" name="f21" value="4"><label for="f21-4">4</label>
+                    <input type="radio" id="f21-5" name="f21" value="5"><label for="f21-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz21" class="questionButtons" onclick="nextQuestion('question21', 'question22', 'f21')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Gruul-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question22" style="display: none" class="singleQuestion">
+                    <legend>22. Zu viel Analyse kann Menschen davon abhalten, das zu tun, was sie tun müssten.</legend>
+                    <input type="radio" id="f22-1" name="f22" value="1" checked="checked"><label for="f22-1">1</label>
+                    <input type="radio" id="f22-2" name="f22" value="2"><label for="f22-2">2</label>
+                    <input type="radio" id="f22-3" name="f22" value="3"><label for="f22-3">3</label>
+                    <input type="radio" id="f22-4" name="f22" value="4"><label for="f22-4">4</label>
+                    <input type="radio" id="f22-5" name="f22" value="5"><label for="f22-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz22" class="questionButtons" onclick="nextQuestion('question22', 'question23', 'f22')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Simic-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question23" style="display: none" class="singleQuestion">
+                    <legend>23. Menschen sollten ihre Denkweise und ihr Verhalten an die jeweilige Situation anpassen.</legend>
+                    <input type="radio" id="f23-1" name="f23" value="1" checked="checked"><label for="f23-1">1</label>
+                    <input type="radio" id="f23-2" name="f23" value="2"><label for="f23-2">2</label>
+                    <input type="radio" id="f23-3" name="f23" value="3"><label for="f23-3">3</label>
+                    <input type="radio" id="f23-4" name="f23" value="4"><label for="f23-4">4</label>
+                    <input type="radio" id="f23-5" name="f23" value="5"><label for="f23-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz23" class="questionButtons" onclick="nextQuestion('question23', 'question24', 'f23')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Gruul-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question24" style="display: none" class="singleQuestion">
+                    <legend>24. Was die Menschen tun, ist meist bestimmt durch ihre Grundbedürfnisse wie Nahrung und Unterkunft.</legend>
+                    <input type="radio" id="f24-1" name="f24" value="1" checked="checked"><label for="f24-1">1</label>
+                    <input type="radio" id="f24-2" name="f24" value="2"><label for="f24-2">2</label>
+                    <input type="radio" id="f24-3" name="f24" value="3"><label for="f24-3">3</label>
+                    <input type="radio" id="f24-4" name="f24" value="4"><label for="f24-4">4</label>
+                    <input type="radio" id="f24-5" name="f24" value="5"><label for="f24-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz24" class="questionButtons" onclick="nextQuestion('question24', 'question25', 'f24')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Boros-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question25" style="display: none" class="singleQuestion">
+                    <legend>25. Leider ist Gewalt manchmal nötig, um den Frieden zu bewahren.</legend>
+                    <input type="radio" id="f25-1" name="f25" value="1" checked="checked"><label for="f25-1">1</label>
+                    <input type="radio" id="f25-2" name="f25" value="2"><label for="f25-2">2</label>
+                    <input type="radio" id="f25-3" name="f25" value="3"><label for="f25-3">3</label>
+                    <input type="radio" id="f25-4" name="f25" value="4"><label for="f25-4">4</label>
+                    <input type="radio" id="f25-5" name="f25" value="5"><label for="f25-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz25" class="questionButtons" onclick="nextQuestion('question25', 'question26', 'f25')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Rakdos-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question26" style="display: none" class="singleQuestion">
+                    <legend>26. Menschen wären glücklicher, wenn sie öfter ihren Instinkten vertrauen würden.</legend>
+                    <input type="radio" id="f26-1" name="f26" value="1" checked="checked"><label for="f26-1">1</label>
+                    <input type="radio" id="f26-2" name="f26" value="2"><label for="f26-2">2</label>
+                    <input type="radio" id="f26-3" name="f26" value="3"><label for="f26-3">3</label>
+                    <input type="radio" id="f26-4" name="f26" value="4"><label for="f26-4">4</label>
+                    <input type="radio" id="f26-5" name="f26" value="5"><label for="f26-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz26" class="questionButtons" onclick="nextQuestion('question26', 'question27', 'f26')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Orzhov-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question27" style="display: none" class="singleQuestion">
+                    <legend>27. Eine Gemeinschaft braucht Menschen, die bereit sind, niedrige Arbeiten auszuführen.</legend>
+                    <input type="radio" id="f27-1" name="f27" value="1" checked="checked"><label for="f27-1">1</label>
+                    <input type="radio" id="f27-2" name="f27" value="2"><label for="f27-2">2</label>
+                    <input type="radio" id="f27-3" name="f27" value="3"><label for="f27-3">3</label>
+                    <input type="radio" id="f27-4" name="f27" value="4"><label for="f27-4">4</label>
+                    <input type="radio" id="f27-5" name="f27" value="5"><label for="f27-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz27" class="questionButtons" onclick="nextQuestion('question27', 'question28', 'f27')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Gruul-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question28" style="display: none" class="singleQuestion">
+                    <legend>28. Menschen, die wenig reden, sind vertrauenswürdiger als Menschen, die viel reden.</legend>
+                    <input type="radio" id="f28-1" name="f28" value="1" checked="checked"><label for="f28-1">1</label>
+                    <input type="radio" id="f28-2" name="f28" value="2"><label for="f28-2">2</label>
+                    <input type="radio" id="f28-3" name="f28" value="3"><label for="f28-3">3</label>
+                    <input type="radio" id="f28-4" name="f28" value="4"><label for="f28-4">4</label>
+                    <input type="radio" id="f28-5" name="f28" value="5"><label for="f28-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz28" class="questionButtons" onclick="nextQuestion('question28', 'question29', 'f28')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Dimir-->
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question29" style="display: none" class="singleQuestion">
+                    <legend>29. Die meisten Menschen können mit Leichtigkeit sagen, wer in einer Situation wirklich die Macht hat.</legend>
+                    <input type="radio" id="f29-1" name="f29" value="1" checked="checked"><label for="f29-1">1</label>
+                    <input type="radio" id="f29-2" name="f29" value="2"><label for="f29-2">2</label>
+                    <input type="radio" id="f29-3" name="f29" value="3"><label for="f29-3">3</label>
+                    <input type="radio" id="f29-4" name="f29" value="4"><label for="f29-4">4</label>
+                    <input type="radio" id="f29-5" name="f29" value="5"><label for="f29-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz29" class="questionButtons" onclick="nextQuestion('question29', 'question30', 'f29')">Nächste Frage</button>
+                </fieldset>
+                
+                <!--Izzet-->                
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="question30" style="display: none" class="singleQuestion">
+                    <legend>30. Was einer denkt und einer fühlt, ist untrennbar.</legend>
+                    <input type="radio" id="f30-1" name="f30" value="1" checked="checked"><label for="f30-1">1</label>
+                    <input type="radio" id="f30-2" name="f30" value="2"><label for="f30-2">2</label>
+                    <input type="radio" id="f30-3" name="f30" value="3"><label for="f30-3">3</label>
+                    <input type="radio" id="f30-4" name="f30" value="4"><label for="f30-4">4</label>
+                    <input type="radio" id="f30-5" name="f30" value="5"><label for="f30-5">5</label>
+                    <br><br>
+                    <button type="button" id="buttonQuiz30" class="questionButtons" onclick="nextQuestion('question30', 'question30', 'f30')">Abschicken</button>
+                </fieldset>
+                
+            </form>
+        
+        </div>
+        
+    </section>
+    
+    <section id="sectionPunkteauswertung" style="display: none">
+        
+        <div>
+                        
+            <!--Punkteauswertung-->
+            <div id="GildenPunkte" class="grid-container" class="justResults">
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultAzorius', 'descriptionResultDIV', 'resultsAzorius')" id="resultsAzorius"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultDimir', 'descriptionResultDIV', 'resultsDimir')" id="resultsDimir"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultBoros', 'descriptionResultDIV', 'resultsBoros')" id="resultsBoros"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultGolgari', 'descriptionResultDIV', 'resultsGolgari')" id="resultsGolgari"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultSimic', 'descriptionResultDIV', 'resultsSimic')" id="resultsSimic"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultSelesnya', 'descriptionResultDIV', 'resultsSelesnya')" id="resultsSelesnya"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultRakdos', 'descriptionResultDIV', 'resultsRakdos')" id="resultsRakdos"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultOrzhov', 'descriptionResultDIV', 'resultsOrzhov')" id="resultsOrzhov"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultIzzet', 'descriptionResultDIV', 'resultsIzzet')" id="resultsIzzet"><p class="resultCounter"><br>0/15</p></div>
+                <div class="resultsGridStyle" onclick="enableDescriptionResult('descriptionResultGruul', 'descriptionResultDIV', 'resultsGruul')" id="resultsGruul"><p class="resultCounter"><br>0/15</p></div>
+            </div>
+            
+        </div>
+        
+    </section>    
+        
+    <section id="sectionLangbeschreibung" style="display: none">
+        
+        <!--Gildenbeschreibung ausführlich-->        
+        <div id="resultCheck" style="display: none">
+            <div id="descriptionResultDIV" style="display: none">
+                <div class="descriptionResultP" style="display: none" id="descriptionResultAzorius">
+                    <h3>Der Azorius Senat</h3>
+                    <p>
+                        Prahv, der antike Azourische Sitz des Rechts, ist der kälteste Ort in Ravnica. Im Innern einer stillen Kammer, hoch über den Dächern der Stadt, sitzt der ehrenwerte Augustin IV, der derzeitige Oberste Schiedsmann der Azorius. Wie schon bei vielen Schiedsmännern vor ihm, ist der Name Augustin IV eine Zierde, ausgesucht aus dem Namen gefeierter Schiedsmänner der Geschichte. Für seine hierarchische und bürokratische Gilde sind Geschichte, Stabilität und das Gesetz von eminenter Wichtigkeit. Selbst ein Feldmarschall der Azorius erlässt genau so oft Gesetze gegen seine Gegner wie er sie auf dem Schlachtfeld bekämpft. Warum soll man seine schimmernde Perlmutrüstung beschädigen? Viele Bürger von Ravnica haben vergessen, dass die Azorius die offizielle Regierung sind. Wer würde ihnen schon die Schuld daran geben, dass ihre Gilde nur dafür da zu sein scheint, dass nichts passiert.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Oberster Schiedsmann Augustin IV. Augustin sthet nun den Azorius schon seit Jahrzehnten vor; das Gesetz setzt er mit kalter Effektivität um. Gerüchteweise soll sich Augustin zu sehr dem Geister-Rat anvertrauen, aber keiner wagt es, seine Methode in Frage zu stellen.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Prahv, die Türme des Rechts. Sie ist eine ehrenwerte Stadt aus Marmor und Alabaster, ein Irrgarten aus langen, widerhallenden Korridoren und gewölbten Kammern. Enge Reihen von makellos gekleideten Soldaten bewachen das gesamte Gelände.</p>
+                    <p><strong>Werte: </strong>
+                        Die Azorius glauben, dass ihre Gesetze und deren Aufrechterhaltung für die Erhaltung des Gildenbundes verantwortlich sind. Sie sind der Überzeugung, dass ihr striktes System der Überwachung der Garant dafür ist, dass alles in Ravnica glatt läuft. Die Gerechtigkeit ist blind, so sagt man, und das beinhaltet auch die Blindheit der Gilde gegenüber Streit, Chaos und Verbrechen.</p>
+                    <p><strong>Struktur: </strong>
+                        Absolut hierarchisch. Die meisten Funktionäre der Azorius habe genau einen Vorgesetzten und zwei Gildenmitglieder, die ihnen Bericht zu erstatten haben. So entsteht eine pyramidale Kommandostruktur.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultDimir">
+                    <h3>Das Haus Dimir</h3>
+                    <p>
+                        Das Haus Dimir, die Unsichtbaren, die zehnte Gilde – eine Erfindung, eine Horrorgeschichte, die man kleinen Kindern erzählt. Der Legende nach soll der Vampir Szadek der Gründungszeremonie des Gildenbundes als geheimer zehnter Unterzeichner beigewohnt haben, dessen Präsenz und Existenz vor den anderen verborgen wurde. Im Laufe der Jahrtausende wurden die Geistergeschichten, die sich um Dimir rankten, immer umfangreicher. Sie erzählten von uralten, untoten Nekromanten-Ratgebern, gespenstischen Auftragsmördern und raffinierten, schwarzen Schrecken, die durch das unendliche Labyrinth der Abwasserkanäle unterhalb der Stadt gleiten. Wenn man auf die etwas misstrauischen und paranoiden Bewohner von Ravnica hört, dann kann man glauben, dass die Agenten des Hauses Dimir überall sind, als Augen und Ohren von Szadek.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Szadek, ein Vampir</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Dämmerhülle, eine versteckte Burg innerhalb einer riesigen Kammer im Untergrund. Nur seine Bewohner und deren Untergebene kennen diesen Standort.</p>
+                    <p><strong>Werte: </strong>
+                        Das Haus Dimir will äußerste Kontrolle über Ravnica. Eine solch uneingeschränkte Kontrolle benötigt vollständige Unsichtbarkeit, damit sich erst gar kein Widerstand bilden kann. Aus diesem Grund arbeitet das Haus Dimir hart daran, dass kein Einwohner von Ravnica an die Existenz der Gilde glaubt.</p>
+                    <p><strong>Struktur: </strong>
+                        Einzelne Zellen. Jeder Agent der Dimir arbeitet in fast vollständiger Isolation. Meist hat ein Mitarbeiter der Gilde nur einen Kontaktmann, damit keiner zuviel über das wahre Ausmaß der Handlungen erfahren kann. Die Anführer der Dimir übermitteln ihre Befehle oft durch Boten-Geister oder andere magische Wege, um ihre Anonymität zu wahren.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultBoros">
+                    <h3>Die Boros Legion</h3>
+                    <p>
+                        Die Boros-Legion glaubt an ein höheres Gesetz, eines in dem die Rechtschaffenheit das Feuer ist. Und die Gerechtigkeit das Licht, das aus ihm scheint. Geführt vom Engel Razia, ist die Boros-Legion eine äußerst gewaltigtätige militärische Kraft. Sich einem Zweikampf mit der Legion zu stellen, käme einem Selbstmord gleich; sie sind die best ausgebildeten und furchtlosesten Kämpfer auf dem Planeten. Bei den Boros geht es um die Tat - Analyse und Zweifel überlassen sie anderen. Vielleicht wurde gerade deshalb ein Teil der Gilde , die Liga des Wojek, dazu auserwählt, die Gesetze in Ravnica durchzusetzen. Ihr strikter Glaube an die Gerechtigkeit macht sie so schnell und effektiv im beheben von Konflikten.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Razia, ein Erzengel des Feuers. Sie ist eine zeitlose Kreation aus rotem und weißem Mana, die als lebendes Vorbild der Gilde dient.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Sonnenheim, eine Kombination aus Festung, Kaserne und Platz für Anbetungen. Weithin als uneinnehmbar bekannt, dient Sonnenheim als Symbol der militärischen Macht und als Basis für die Operationen der Wojek Division von Boros, den offiziellen Friedenbewahrern Ravnicas.</p>
+                    <p><strong>Werte: </strong>
+                        Leidenschaftlicher Glaube an das Gesetz. Freunde der Boros genießen uneingeschränktes Vertrauen und Loyalität. Für ihre Feinde sind sie gefährliche Eiferer, die alles für ihre Glaubenslehre tun würden.</p>
+                    <p><strong>Struktur: </strong>
+                        Militärisch. Die Boros sehen in Razia mehr ein Aushängeschild als einen tatsächlichen Oberbefehlshaber. Dennoch verehren vieleGeneräle sie und würden jeden ihrer Befehle widerstandslos ausführen. Jeder Boros-Legionär hat eine Aufgabe im Kampf.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultGolgari">
+                    <h3>Die Golgari</h3>
+                    <p>
+                        Die Golgari glauben, dass man nicht wahrlich leben kann, ehe man nicht gestorben ist. Für sie gibt der Tod dem Leben einen Sinn und aus dem Tod entsteht neues Leben. Mit ihrere riesigen Horde von Untoten, die sowohl als stehendes Heer auch als Hilfsarbeiter dienen, agieren die Golgari in Ravnicas Untergrund, wobei sie langsam verlassene und herrenlose Gebiete übernehmen, wie ein übelriechender schleimiger Schimmel. Die Gilde unterteilt sich in viele Fraktionen, von den untoten Scheußlichkeiten aus pflanzlicher Materie und Fleisch bis hin zu den Dunkelelfen Ravnicas, auch bekannt als die Devkarin. Um die Vorherrschaft in der Gilde wurde seit jeher gerungen. Die Schwestern des steinernen Todes, ein Trio aus Gorgonen, sind nun seit über einem Jahrtausend die Anführer der Gilde, aber auch Savra, eine Schamanin der Dunkelelfen hat ein Auge auf den Thron der Golgari geworfen. Und üblicherweise bekommt Savra was sie will.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Hart umkämpft. Die Schwestern des steinernen Todes, ein Trio aus Gorgonen, die hellseherische Kräfte haben, führen zurzeit die Gilde. Aber die Kräfte der Dunkelelfen Schamanin Savra sind inzwischen groß genug, um die Schwestern herauszufordern. Auch konnten die Gerüchte über den legendären Nekromanten, Svogthir, Gründer der Gilde, nie ausgelöscht werden.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Svogthos, das ruhelose Grab. Eines eine verzierte und vergoldete Kathedrale der Orzhov ist das Grab, heute eine quasi lebende Struktur. Einige behaupten es bewege sich sobald sich das Zentrum de Golgari Gebietes verlagert. </p>
+                    <p><strong>Werte: </strong>
+                        Macht und Wachstum. Die Golgari wachsen dadurch, dass sie die Toten mit in ihre Reihen aufnehmen, aber auch durch gelegentliche kleine Überfälle auf neue Gebiete. </p>
+                    <p><strong>Struktur: </strong>
+                        Ein Organismus mit vielen Räubern im Inneren. Die Untergruppen der Gilde (Dunkelelfen, untote Pflanzen-Hybriden und andere) kämpfen um die Kontrolle.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultSimic">
+                    <h3>Das Simic Kombinat</h3>
+                    <p>
+                        Was wird aus den Ordnern der Wildnis auf einer Welt, auf der die Wildnis vollständig gezähmt ist? Versetze dich mal in die seltsame Lage des Simic Kombinates, einer Gruppe von Elfen und Gelehrten, die sich um die Erhaltung der Natur in Ravnica kümmern. Just in dem Moment als die Natur in die Stadt eingebunden war, waren auch die Vorstellungen der Simic erfüllt, wie die Natur sein sollte. In merkwürdiger Art und Weise begannen die Simic die Natur so zu verändern, dass sie in einer Welt überleben kann, die immer mehr durch gemeißelte Steine bedeckt wird. Sie begannen damit die Biologie zu „verbessern“ und die Evolution voranzutreiben. Der neueste Durchbruch gelang durch den Simic Weisen Momir Vig, einem analytischen Genie, dessen Verstand aus einer formellen Institution heraus arbeitet. Vig bahnte den Weg des Zytoplasmas, einer formbaren Biomasse, die andere Lebewesen verbessern kann.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Momir Vig, der visionäre Pioneer der Zytoplasmen-Technologie. Die Gilde stellte sich schnell hinter Vig, als dessen erste Versuche spezielle Lebensformen zu züchten glückten. Vig glaubt, dass der Schlüssel der Evolution in Ravnica in der „Schaffung“ des Lebens in der Stadt ist.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Novijen, ein schwebender Campus in der Mitte der Stadt. Novijen ist eine bizarre Mischung aus lebender Materie und gemeißelten Steinen. Es wird durch dicke Schnüre auf seinem Platz gehalten, die Novijen von den umliegenden Gebäuden isolieren. Hier entwickeln und perfektionieren die Simic ihre geheimsten biologischen Projekte.</p>
+                    <p><strong>Werte: </strong>
+                        Sie Simic glauben an die Vermehrung und Veränderung natürlicher Organismen. Die Gründe für ihr Handeln liegen irgendwo zwischen der Verbesserung der Qualität des Lebens für alle Einwohner von Ravnica und der Wiederherstellung der Balance zwischen Natur und Zivilisation auf ihrer Welt.</p>
+                    <p><strong>Struktur: </strong>
+                        Wie eine Kreuzung aus einer Universität, einem Labor und einem Zoo. Vor hunderten von Jahren bestand noch eine strenge Trennung zwischen den Testobjekten der Gilde und den Forschern, die sie studierten und beschützen. Seit Vig’s Aufstieg verschwimmt diese Trennung aber immer mehr.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultSelesnya">
+                    <h3>Die Selesnya Konklave</h3>
+                    <p>
+                        "Wenn du dich uns angeschlossen hast, dann bist du uns gleichgestellt. Vorher bist du verloren." So sprach der Wolfenreiter-Evangelist Tolsimir, ein Agent der Selesnya Konklave. Aber diese Worte hätten von jedem aus der Gilde kommen können. Je nach Sichtweise ist die Konklave entweder eine selbstlose, erzieherische und spirituelle Gruppe oder eine gehirnwaschende Natur-Sekte. Diese Gilde stützt ihre Mitgliederschar durch die unaufhaltsame Neuanwerbung von Außenstehenden. Die Struktur ist fast vollständig dezentralisiert - ein großes Konzil von Lebewesen, die sich teilweise ein Bewusstsein teilen, führen die Konklave. Die heimat der Konklave ist Vitu-Ghazi, ein uralter Baum in der Mitte von Ravnicas ältestem und größten Stadtteil.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Gemeinschaftliche Führung durch alle Mitglieder, das behauptet zumindest die Gilde. Die Dryaden der Konklave teilen sich ein Bewusstsein, dass sie an andere weitergeben können.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Vitu-Ghazi, einst der größte Baum der Welt. Obwohl er schon vor langer Zeit zerstört wurde, hält die Magie der Dryaden und Elfen Vitu-Ghazi am Leben. In seinem Stamm haben sich die wichtigsten Plätze der Selesnya angesiedelt.</p>
+                    <p><strong>Werte: </strong>
+                        Die Selesnya versuchen immer, die Zahl ihrer Gildenmitglieder zu vergrößern. Die Konklave befehligt viele Saprolinge und größere Elementare als Arbeiter und Wächter und ihre Prediger verbreiten das Loblied der Gilde von jeder wichtigen Straßenecke aus.</p>
+                    <p><strong>Struktur: </strong>
+                        Dezentralisiert, gemeinschaftlich, kollektiv. In der Konklave sind alle gleich ohne Rücksicht auf persönliche Rolle eines einzelnen.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultRakdos">
+                    <h3>Der Kult von Rakdos</h3>
+                    <p>
+                        Ein Besucher von Ravnica könnte sich wundern, warum der Kult von Rakdos nicht von den anderen Gilden schon vor Jahrtausenden zerschlagen wurde. Welchen sinnvollen Nutzen könnte denn eine Clique von mordlüsternden, vergnügungssüchtigen Dämonenanbetern schon haben? Die gesetzestreuen Gilden wenden sich an die Rakdos, wenn sie ein Hindernis beseitigen oder einen Kunden bei Laune halten müssen. Die Meuchelmörder der Rakdos mögen zwar unordentlich sein, aber sie sind sehr eifrig und viele halten die Restaurants und Nachtklubs des Kultes für unnachahmbar. Und der Dämon Rakdos selbst? Glücklicherweise – für den Rest von Ravnica – verbringt er die meiste Zeit tief unten in seinem Palast Rix Maadi und vertreibt sich seine zeit mit unaussprechlichen Folterungen und anderen „Ablenkungen“.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Der Dämon Rakdos, eine feurige Abscheulichkeit, dessen Herkunft allen außer ihm selbst unbekannt ist. Rakdos hat seit tausenden von Jahren mit den Bewohnern von Ravnica vergnügt und einen Personenkult um sich aufgebaut, dessen Größe nur aufgrund der hohen Sterblichkeitsrate in der Gilde nicht anwächst.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Rix Maadi, ein grotesker Palast in den dunkelsten Tiefen der Unterstadt. Nur wenige Gildenmitglieder haben je das Innere des Palastes gesehen. Viele, die es wieder heraus geschafft haben, sind zu verwirrt, um ihn zu beschreiben. Wenn Prahv der kälteste Platz in Ravnica ist, dann ist Rix Maadi der heißeste.</p>
+                    <p><strong>Werte: </strong>
+                        Werte? Werte stören nur beim Spaß haben. Nur die Aussicht auf Macht kann sie vom reinen Hedonismus abhalten.</p>
+                    <p><strong>Struktur: </strong>
+                        Wie eine außer Kontrolle gebrachte Party. Die einzige Struktur der Gilde wird durch die bestimmt, die genug Macht haben um zu Führen. Solche Leute haben oft nur eine kurze Lebenserwartung.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultOrzhov">
+                    <h3>Die Orzhov</h3>
+                    <p>
+                        Um die Orzhov zu finden, so sagt man, muss man nur dem Gold folgen. Der so genannten Gilde des Handels gehören sowohl Ravnicas reichste Bürger als ich ihre Unterdrückten an. Auf der höchsten Stufe der Gildenleiter sitzen die Patriarchen, deren Reichtum und Privilegien keine Grenzen kennen. Ihre Wucherzinsen verhelfen ihnen zu einem verlängerten Leben, bei dem sie korpulenter und grauer werden. Sie kaufen ihnen die Unsterblichkeit – Geister der vergangenen Patriarchen kümmern sich um ihre „Familiena(h)ngelegenheiten“ aus dem Jenseits. Die tiefsten Tiefen der Gilde sind durch trostlose Diener besetzt. Viele sind vertraglich verpflichtet, durch erdrückende Schulen, die sie von ihren Eltern oder teilweise sogar entfernte Vorfahren geerbt haben. Ein Scharnier aus religiösem Pomp und Ritualen hält diese zerbrechliche soziale Ordnung zusammen, obwohl einige glauben, dass die Orzhov keinem anderen Gott huldigen als dem Gold.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Ein Rat von reichen, mächtigen Orzhov Patriarchen, einige lebend, andere untot. Jedes Mitglied des Rates ist Erzbischof und Pate in einer Person., alle im ständigen Wetteifer, noch mehr Gold und Einfluss zu erlangen, als sie schon haben.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Orzhova, die so genannte Kirche des Handels. Selbst den treuesten Gildenmitgliedern ist es nicht klar, ob Orzhova eine Kathedrale mit finanziellem, oder eine Bank mit religiösem Interesse ist.</p>
+                    <p><strong>Werte: </strong>
+                        Die Orzhov nutzen ihre unterdrückende soziale Ordnung als Mittel, ihre Macht zu sichern. Die gesamte Gilde ist aufgebaut, um die Reichen reich und die Armen arm zu halten. Die Riten und Rituale der Gilde, ihre Gesetze und Strukturen sind dazu da, den Status Quo zu erhalten.</p>
+                    <p><strong>Struktur: </strong>
+                        Obligatorisch, mit strenger Teilung zwischen den Privilegierten und den Unterdrückten. Diese Gilde besteht eigentlich aus zwei Gilden: eine für die „Jemands“ und eine für die „Niemands“.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultIzzet">
+                    <h3>Die Izzet Liga</h3>
+                    <p>
+                        Die Izzet betreiben Hitze und Kälte - und das buchstäblich. Tatsächlich betreiben sie fast alles, vom Heizungssystem für Ravnica bis hin zur Wasserversorgung. Als unbestrittene Meister der Zauberei und Erfindungen in Ravnica, sind sie die einzige Gilde die Metamagie versteht, die Art und Weise wie Magie tatsächlich funktioniert. Unter der Führung des launenhaften und unergründlichen brillanten Drachen Niv-Mizzet erstellen und zerstören die Izzet Magiemacher Dinge angetrieben durch die Begeisterung für Neuentdeckungen. Als Experte der Elementar-Magie benutzen die Izzet Elementare als Wachen für Alchemielabore und um ihre Turbinen anzutreiben. Sie haben sogar ihre eigene Mischrasse von Elementaren gezüchtet, die so genannten Seltsamkeiten. Anders als andere Gilden sehen die Izzet keinen Sinn in Macht, Herrschaft oder Reichtum. Die rasende Vermehrung von Wissen ist das einzige Ziel der Gilde.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Niv-Mizzet, ein uralter Drachen-Magier. Nach über zehntausend Jahren, nachdem Niv-Mizzet das Verschwinden fast alle anderen Drachen aus Ravnica „arrangiert“ hatte, wurde ihm langweilig und er dachte, er könnte es könnte unterhaltsam sein, eine eigene Gilde zu haben. Er ist ein „Parun“, ein tatsächlicher Unterzeichner des Gildenbundes.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Nivix, der Drachen-Horst. Dieser unmöglich hohe Spitzturm soll angeblich von den Hochentwickeltsten Siegeln geschützt werden, die je erdacht wurden. In den höchstgelegenen Kammern hält Niv-Mizzet Gericht mit seinen fähigsten Magiemachern - er verspeist nur diejenigen die ihm missfallen.</p>
+                    <p><strong>Werte: </strong>
+                        Aufbau und Zerstörung, Einsicht und Leidenschaft, das ist die Lebensenergie der Izzet. Noch wie im Mittelalter machen die Magiemacher die Dinge einfach, um zu sehen, ob sie gemacht werden können und um zu sehen was passiert.</p>
+                    <p><strong>Struktur: </strong>
+                        Die Izzet sind eine Vereinigung gleich denkender, leidenschaftlicher Philosophen, von denen jeder die Genialität und Launen von Niv-Mizzet bewundert. Nur durch die feurige Konkurrenz und die ständige Suche nach Wissen, laufen die Alchemielabore und Universitäten der Gilde so großartig.</p>
+                </div>
+                <div class="descriptionResultP" style="display: none" id="descriptionResultGruul">
+                    <h3>Der Gruul Klan</h3>
+                    <p>
+                        Die Gruul nehmen sich weder die Zeit dafür, ihren Standpunkt zu erklären, noch erlernen sie die dafür notwendigen Sprachkenntnisse. Sie halten die Zivilisation für einen Hohn, einen goldenen Käfig, der die eigenen Wünsche unterdrückt und die Schwachen mächtig scheinen lässt. Die Gruul leben für das Hier und Jetzt und sie „überzeugen“ andere, es ihnen gleich zu tun. Einst eine starke Gilde sind die Gruul heute nur noch ein loser Zusammenschluss von Bettlern, Banden und Plündertruppen. Die größte dieser Banden hat auch den größten Anführer: Borborygmos, ein riesiger Zyklop, der nebenbei gerne Zwietracht verbreitet. Die Banden der Gruul überleben dadurch, dass sie ihre Nachbarschaft plündern und brandschatzen und aus den Trümmern das herausholen, was sie brauchen. Wenn ihre Vorräte zu Ende gehen, wird es Zeit für einen neuen Streifzug durch die Gemeinde.</p>
+                    <p><strong>Gilden Anführer: </strong>
+                        Umkämpft. Die größte und brutalste Gruul Gang wird von einem riesigen Zyklopen namens Borborygmos geführt, aber es gibt zahlreiche Plündertruppen und ihre Anführer streiten ständig um Gebiete und Vorherrschaft.</p>
+                    <p><strong>Gildenhalle: </strong>
+                        Keine. Die Gruul sind urbane Nomaden, sie saugen das Gebiet, in dem sie leben aus, bis keine Rohstoffe mehr vorhanden sind. Vor Jahrtausenden waren die Gruul eine mächtige Gilde mit einer Gildenhalle im Jagdhausstil, aber niemand weiß mehr, wo sich diese befindet.</p>
+                    <p><strong>Werte: </strong>
+                        Die Gruul suchen absolute Freiheit von den Fesseln der Zivilisation und den Ansprüchen der anderen Gilden. Sie verabscheuen die „Gesellschaft“ und ziehen es vor, nur für den Augenblick zu leben – und sie bestehen darauf, dass andere dies auch tun. Wenn es so etwas wie Gruul Philosophen geben würde, wären sie fest im Glauben, dass die Zerstörung der Zivilisation die Menschheit befreit.</p>
+                    <p><strong>Struktur: </strong>
+                        Lose, nicht verbundene Banden. Die Gruul werden auch manchmal eine „Gilde die gar keine ist“ genannt, weil sie jede Art von Struktur verabscheuen. In großen Städten stehen oftmals die Bettler-Gilden den Gruul loyal zur Seite. Außerhalb der Städte durchschwärmen die Plündergruppen den Schutt und die Ruinen, in denen sie leben.</p>
+                </div>
+            </div>
+        </div>
+    
+    </section> 
+    
+    <footer>
+        <p><a href="/subpages/impress.html">IMPRESSUM</a></p>
+    </footer>
+    
 </body>
-</html>

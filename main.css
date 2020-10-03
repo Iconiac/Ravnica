@@ -1,0 +1,183 @@
+body{
+    margin: 0px;
+}
+
+h1{
+    font-size: 120px;
+    margin: 70px 0px 20px 0px;
+}
+
+h2{
+    font-size: 32px;
+}
+
+fieldset{
+    margin: 30px 0px 30px 0px;
+}
+
+#gildenOverview{
+    background-color: #444444;
+}
+
+#inputFormSubmit, #headline, footer{
+    text-align: center;
+}
+
+#description{
+    text-align: center;
+    font-size: 22px;
+}
+
+#descriptionTextDIV{
+    color: white;
+    font-size: 16px;
+}
+
+#GildenPunkte {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    padding: 50px 15% 80px 15%;
+    background-color: #444444;
+}
+
+#GildenListeIcons {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    background-color: #444444;
+    padding: 50px 20% 30px 20%;
+}
+
+.iconsGridStyle {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin: 0px 12% 0px 12%;
+    padding: 15px;
+}
+
+#startScreen{
+    background-image: url('media/RavnicaGate.jpg');
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    padding: 70px 20% 150px 20%;
+}
+
+#mainForm{
+    padding: 50px 20% 70px 20%;
+    text-align: center;
+}
+
+.resultsGridStyle{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 120% 0px 20px 0px;
+    font-size: 20px;
+    text-align: center;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+}
+
+
+#resultsAzorius {
+    background-image: url(media/Azorius02.png);
+}
+#resultsDimir {
+    background-image: url(media/Dimir02.png);
+}
+#resultsBoros {
+    background-image: url(media/Boros02.png);
+}
+#resultsGolgari {
+    background-image: url(media/Golgari02.png);
+}
+#resultsSimic {
+    background-image: url(media/Simic02.png);
+}
+#resultsSelesnya {
+    background-image: url(media/Selesnya02.png);
+}
+#resultsRakdos {
+    background-image: url(media/Rakdos02.png);
+}
+#resultsOrzhov {
+    background-image: url(media/Orzhov02.png);
+}
+#resultsIzzet {
+    background-image: url(media/Izzet02.png);
+}
+#resultsGruul {
+    background-image: url(media/Gruul02.png);
+}
+
+#resultsAzorius:hover, #resultsDimir:hover, #resultsBoros:hover, #resultsGolgari:hover, #resultsSimic:hover, #resultsSelesnya:hover, #resultsRakdos:hover, #resultsOrzhov:hover, #resultsIzzet:hover, #resultsGruul:hover{
+    opacity: 1.0;
+    background-size: 120%;
+}
+
+#azorius {
+    background-image: url(media/Azorius.png);
+}
+#dimir {
+    background-image: url(media/Dimir.png);
+}
+#boros {
+    background-image: url(media/Boros.png);
+}
+#golgari {
+    background-image: url(media/Golgari.png);
+}
+#simic {
+    background-image: url(media/Simic.png);
+}
+#selesnya {
+    background-image: url(media/Selesnya.png);
+}
+#rakdos {
+    background-image: url(media/Rakdos.png);
+}
+#orzhov {
+    background-image: url(media/Orzhov.png);
+}
+#izzet {
+    background-image: url(media/Izzet.png);
+}
+#gruul {
+    background-image: url(media/Gruul.png);
+}
+
+#descriptionTextDIV{
+    padding: 10px 25% 30px 25%;
+}
+
+.descriptionTextP{
+    text-align: center;
+}
+
+.iconsGridStyle{
+    opacity: 0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 90px;
+    height: 50px;
+    width: 50px;
+}
+
+#descriptionResultDIV{
+    padding: 10px 25% 30px 25%;
+}
+
+.descriptionResultP{
+    text-align: center;
+}
+
+.resultCounter{
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 80px 0px 0px 0px;
+    padding: 0px 0px 10px 0px;
+    color: white;
+}
